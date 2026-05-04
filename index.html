@@ -347,7 +347,7 @@
       <span class="meta-i"><svg width="13" height="13" viewBox="0 0 24 24" class="ico" stroke="var(--orange)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Diagnóstico real</span>
       <span class="meta-i"><svg width="13" height="13" viewBox="0 0 24 24" class="ico" stroke="var(--orange)" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> 35 mil+ alunas</span>
     </div>
-    <button class="btn btn-primary pulse" onclick="go('s-q1')" style="max-width:400px">
+    <button class="btn btn-primary pulse" onclick="trackStart();go('s-q1')" style="max-width:400px">
       Iniciar quiz grátis
       <svg width="18" height="18" viewBox="0 0 24 24" class="ico" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
     </button>
@@ -624,6 +624,26 @@ const EVENT_DATE=new Date('2026-05-25T19:30:00-03:00');
 const PROOFS=['dep1.jpeg','dep2.jpeg','dep3.jpeg'];
 
 /* ── Nav ─────────────────────────────────────── */
+/* ── Analytics ────────────────────────────────── */
+const GA_ID=''; // Cole aqui seu Measurement ID: 'G-XXXXXXXXXX'
+function _track(event,params){
+  try{
+    const key='quiz_analytics';
+    const data=JSON.parse(localStorage.getItem(key)||'{}');
+    if(!data[event])data[event]=0;
+    data[event]++;
+    data['_updated']=new Date().toISOString();
+    localStorage.setItem(key,JSON.stringify(data));
+  }catch(e){}
+  if(GA_ID&&typeof gtag==='function')gtag('event',event,params||{});
+}
+function trackStart(){_track('quiz_start');}
+function trackQuestion(n){_track('quiz_q'+n);}
+function trackComplete(score){_track('quiz_complete',{score});}
+function getAnalytics(){
+  try{return JSON.parse(localStorage.getItem('quiz_analytics')||'{}');}catch(e){return{};}
+}
+
 function go(id){
   document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
   document.getElementById(id).classList.add('active');
@@ -644,6 +664,7 @@ function next(id,qNum){
   go(id);
   setProgress(qNum-1);
   buildDots(qNum);
+  trackQuestion(qNum);
 }
 
 /* ── Dots ─────────────────────────────────────── */
@@ -722,6 +743,7 @@ function buildResult(){
   const total=Object.values(scores).reduce((s,v)=>s+v.pts,0);
   const rawNota=(total/MAX_PTS)*10;
   const nota=Math.min(rawNota,8.9);
+  trackComplete(total);
   const barPct=Math.min(Math.round((total/MAX_PTS)*100),100);
 
   let level,levelColor,levelIcon,diagnosis,actions,ctaText,scoreHead;
