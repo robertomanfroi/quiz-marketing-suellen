@@ -946,6 +946,79 @@ document.addEventListener('keydown',e=>{
     document.activeElement.click();e.preventDefault();
   }
 });
+
+/* ── Admin Panel ──────────────────────────────── */
+(function(){
+  if(new URLSearchParams(location.search).get('admin')==='1'){
+    const LABELS={
+      quiz_start:'Iniciaram o quiz',
+      quiz_q2:'Chegaram na Q2',quiz_q3:'Chegaram na Q3',quiz_q4:'Chegaram na Q4',
+      quiz_q5:'Chegaram na Q5',quiz_q6:'Chegaram na Q6',quiz_q7:'Chegaram na Q7',
+      quiz_q8:'Chegaram na Q8',quiz_q9:'Chegaram na Q9',quiz_q10:'Chegaram na Q10',
+      quiz_q11:'Chegaram na Q11',quiz_q12:'Chegaram na Q12',quiz_q13:'Chegaram na Q13',
+      quiz_complete:'Completaram o quiz'
+    };
+    function renderAdmin(){
+      const d=getAnalytics();
+      const start=d.quiz_start||0;
+      const complete=d.quiz_complete||0;
+      const pct=v=>start>0?Math.round((v/start)*100):0;
+      const drop=v=>start>0?Math.round(((start-v)/start)*100):0;
+      const keys=Object.keys(LABELS);
+      const rows=keys.map(k=>{
+        if(!(k in d))return'';
+        const v=d[k];
+        const p=pct(v);
+        const isStart=k==='quiz_start';
+        const barColor=p>=80?'#61CE70':p>=50?'#F5C842':'#FF4444';
+        return`<div style="margin-bottom:14px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+            <span style="font-size:13px;color:#ccc;">${LABELS[k]}</span>
+            <span style="font-size:13px;font-weight:700;color:#fff;">${v.toLocaleString('pt-BR')} <span style="color:${barColor};font-size:11px;">(${p}%)</span></span>
+          </div>
+          <div style="background:rgba(255,255,255,.08);border-radius:4px;height:8px;overflow:hidden;">
+            <div style="height:100%;width:${p}%;background:${barColor};border-radius:4px;transition:width .6s;"></div>
+          </div>
+          ${!isStart&&k in d?`<div style="font-size:11px;color:rgba(255,255,255,.4);margin-top:2px;">Drop acumulado: ${drop(v)}%</div>`:''}
+        </div>`;
+      }).join('');
+      const taxa=start>0?Math.round((complete/start)*100):0;
+      const updated=d._updated?new Date(d._updated).toLocaleString('pt-BR'):'—';
+      document.getElementById('admin-panel').innerHTML=`
+        <div style="position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.92);overflow-y:auto;padding:24px 16px;">
+          <div style="max-width:560px;margin:0 auto;">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;">
+              <h2 style="font-family:'Montserrat',sans-serif;font-size:20px;font-weight:900;color:#FC4C04;">📊 Analytics do Quiz</h2>
+              <span style="font-size:11px;color:rgba(255,255,255,.4);">Atualizado: ${updated}</span>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px;">
+              <div style="background:#1a1a1a;border:1px solid rgba(252,76,4,.3);border-radius:12px;padding:16px;text-align:center;">
+                <div style="font-size:32px;font-weight:900;color:#FC4C04;">${start.toLocaleString('pt-BR')}</div>
+                <div style="font-size:12px;color:rgba(255,255,255,.6);margin-top:4px;">Iniciaram</div>
+              </div>
+              <div style="background:#1a1a1a;border:1px solid rgba(97,206,112,.3);border-radius:12px;padding:16px;text-align:center;">
+                <div style="font-size:32px;font-weight:900;color:#61CE70;">${taxa}%</div>
+                <div style="font-size:12px;color:rgba(255,255,255,.6);margin-top:4px;">Taxa de conclusão</div>
+              </div>
+            </div>
+            <div style="background:#1a1a1a;border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:20px;margin-bottom:16px;">
+              <div style="font-size:13px;font-weight:700;color:#FC4C04;margin-bottom:16px;text-transform:uppercase;letter-spacing:.08em;">Funil por pergunta</div>
+              ${rows||'<div style="color:rgba(255,255,255,.4);font-size:14px;">Nenhum dado ainda. Aguarde pessoas acessarem o quiz.</div>'}
+            </div>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;">
+              <button onclick="if(confirm('Zerar todos os dados?')){localStorage.removeItem('quiz_analytics');location.reload();}" style="background:#FF4444;color:#fff;border:none;border-radius:8px;padding:10px 20px;font-size:13px;font-weight:700;cursor:pointer;">🗑 Zerar dados</button>
+              <button onclick="const d=getAnalytics();const txt=Object.entries(d).filter(([k])=>k!=='_updated').map(([k,v])=>(LABELS[k]||k)+': '+v).join('\n');navigator.clipboard.writeText(txt).then(()=>alert('Copiado!'));" style="background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.2);border-radius:8px;padding:10px 20px;font-size:13px;font-weight:700;cursor:pointer;">📋 Copiar dados</button>
+              <button onclick="location.href=location.pathname" style="background:rgba(255,255,255,.06);color:rgba(255,255,255,.6);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:10px 20px;font-size:13px;cursor:pointer;">✕ Fechar</button>
+            </div>
+          </div>
+        </div>`;
+    }
+    const div=document.createElement('div');
+    div.id='admin-panel';
+    document.body.appendChild(div);
+    renderAdmin();
+  }
+})();
 </script>
 </body>
 </html>
