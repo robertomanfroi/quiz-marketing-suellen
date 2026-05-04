@@ -60,6 +60,8 @@
       box-shadow:0 8px 40px rgba(252,76,4,.6),0 0 0 0 rgba(252,76,4,.4);
     }
     .btn-primary:active{transform:scale(.98)}
+    .btn-green{background:linear-gradient(135deg,#22c55e,#16a34a)!important;box-shadow:0 4px 28px rgba(34,197,94,.45),0 0 0 0 rgba(34,197,94,.4)!important}
+    .btn-green:hover{box-shadow:0 8px 40px rgba(34,197,94,.6),0 0 0 0 rgba(34,197,94,.4)!important}
     .btn-primary.disabled{background:rgba(255,255,255,.07);color:rgba(255,255,255,.3);box-shadow:none;pointer-events:none;border:1px solid rgba(255,255,255,.1)}
     .btn-ghost{background:transparent;color:var(--muted);border:1px solid rgba(255,255,255,.12);font-size:13px;font-weight:500;padding:10px 20px}
     .btn-ghost:hover{color:var(--white);border-color:rgba(255,255,255,.3)}
@@ -222,7 +224,7 @@
 
     /* SOCIAL PROOF */
     .proof-section{margin-bottom:24px}
-    .proof-title{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:12px;text-align:center}
+    .proof-title{font-size:17px;font-weight:800;letter-spacing:.01em;text-transform:none;color:var(--cream);margin-bottom:16px;text-align:center;font-family:'Montserrat',sans-serif}
     .proof-cards{display:flex;flex-direction:column;gap:10px}
     .proof-img{width:100%;border-radius:14px;display:block;border:1px solid rgba(255,255,255,.07);}
 
@@ -880,7 +882,7 @@ function buildResult(){
         </div>
       </div>
       ${countdownHTML}
-      <a href="${LINK}" target="_blank" rel="noopener" class="btn btn-primary pulse" style="text-decoration:none;font-size:15px">
+      <a href="${LINK}" target="_blank" rel="noopener" class="btn btn-primary btn-green pulse" style="text-decoration:none;font-size:15px">
         ${ctaText}
         <svg width="17" height="17" viewBox="0 0 24 24" class="ico" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
       </a>
