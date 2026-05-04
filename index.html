@@ -223,17 +223,8 @@
     /* SOCIAL PROOF */
     .proof-section{margin-bottom:24px}
     .proof-title{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:12px;text-align:center}
-    .proof-cards{display:flex;flex-direction:column;gap:8px}
-    .proof-card{
-      background:rgba(255,255,255,.025);
-      border:1px solid rgba(255,255,255,.07);
-      border-left:2px solid rgba(252,76,4,.45);
-      border-radius:0 12px 12px 0;
-      padding:14px 16px;
-    }
-    .proof-stars{color:var(--orange);font-size:12px;letter-spacing:2px;margin-bottom:5px}
-    .proof-text{font-size:13px;color:rgba(255,255,255,.75);line-height:1.5;font-style:italic}
-    .proof-author{font-size:11px;color:rgba(252,76,4,.7);margin-top:5px;font-weight:700}
+    .proof-cards{display:flex;flex-direction:column;gap:10px}
+    .proof-img{width:100%;border-radius:14px;display:block;border:1px solid rgba(255,255,255,.07);}
 
     /* DIVIDER */
     .divider{display:flex;align-items:center;gap:12px;margin:24px 0;color:rgba(255,255,255,.2);font-size:12px;letter-spacing:.05em;text-transform:uppercase}
@@ -350,7 +341,7 @@
       Quiz Gratuito
     </div>
     <h1>Você é <span>estrategista</span><br/>no seu negócio?</h1>
-    <p>Responda 13 perguntas e descubra <strong style="color:var(--white)">seu nível estratégico</strong> com um diagnóstico completo e personalizado.</p>
+    <p>Responda e descubra <strong style="color:var(--white)">seu nível estratégico</strong> com um diagnóstico completo e personalizado.</p>
     <div class="meta">
       <span class="meta-i"><svg width="13" height="13" viewBox="0 0 24 24" class="ico" stroke="var(--orange)" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg> 4 minutos</span>
       <span class="meta-i"><svg width="13" height="13" viewBox="0 0 24 24" class="ico" stroke="var(--orange)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Diagnóstico real</span>
@@ -630,11 +621,7 @@ const scores={};
 // Event date: May 25, 2026 19:30 BRT (UTC-3)
 const EVENT_DATE=new Date('2026-05-25T19:30:00-03:00');
 
-const PROOFS=[
-  {text:'Aprendi em 2 noites o que tentei aprender em 1 ano sozinha. Meu direct lotou na semana seguinte.',author:'Carla S., designer gráfica'},
-  {text:'Saí do zero para 14 vendas pelo Instagram no primeiro mês depois da imersão.',author:'Ana P., confeiteira'},
-  {text:'Meu faturamento cresceu 40% em 45 dias. Finalmente entendi o que estava errando.',author:'Juliana M., esteticista'},
-];
+const PROOFS=['dep1.jpeg','dep2.jpeg','dep3.jpeg'];
 
 /* ── Nav ─────────────────────────────────────── */
 function go(id){
@@ -790,12 +777,7 @@ function buildResult(){
 
   const actionsHTML=actions.map(a=>`<div class="improve-item"><div class="improve-dot">${chk()}</div><span>${a}</span></div>`).join('');
 
-  const proofsHTML=PROOFS.map(p=>`
-    <div class="proof-card">
-      <div class="proof-stars">★★★★★</div>
-      <div class="proof-text">"${p.text}"</div>
-      <div class="proof-author">${p.author}</div>
-    </div>`).join('');
+  const proofsHTML=PROOFS.map(src=>`<img class="proof-img" src="${src}" alt="Depoimento da imersão" loading="lazy"/>`).join('');
 
   const cd=getCountdown();
   const countdownHTML=cd?`
