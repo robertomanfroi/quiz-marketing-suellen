@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Diagnóstico: O que está travando suas vendas no Instagram?</title>
+  <title>Quiz: Você é estrategista no seu negócio?</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,700&family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet"/>
@@ -93,8 +93,8 @@
     .q-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
     .q-num{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--orange)}
     .q-area{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
-    .q-dots{display:flex;gap:5px;margin-bottom:28px}
-    .dot{width:24px;height:3px;border-radius:2px;background:rgba(255,255,255,.1);transition:var(--ease)}
+    .q-dots{display:flex;gap:5px;margin-bottom:28px;flex-wrap:wrap}
+    .dot{width:18px;height:3px;border-radius:2px;background:rgba(255,255,255,.1);transition:var(--ease)}
     .dot.done{background:var(--orange)}
     .dot.cur{background:var(--orange);opacity:.5}
     .q-title{font-family:'Montserrat',sans-serif;font-size:clamp(19px,5vw,25px);font-weight:800;line-height:1.25;margin-bottom:22px}
@@ -189,22 +189,16 @@
       background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);
     }
 
-    /* ERRORS */
-    .section-title{font-family:'Montserrat',sans-serif;font-size:16px;font-weight:800;margin-bottom:14px;display:flex;align-items:center;gap:8px}
-    .error-list{display:flex;flex-direction:column;gap:10px;margin-bottom:24px}
-    .error-card{
-      display:flex;align-items:flex-start;gap:12px;
-      background:rgba(255,68,68,.05);
-      border:1px solid rgba(255,68,68,.15);
-      border-left:3px solid rgba(255,68,68,.7);
-      border-radius:0 14px 14px 0;padding:14px 16px;
+    /* DIAGNOSIS */
+    .diag-card{
+      background:rgba(255,255,255,.025);
+      border:1px solid rgba(255,255,255,.07);
+      border-radius:18px;padding:20px;margin-bottom:24px;
+      font-size:14px;line-height:1.7;color:rgba(255,255,255,.8);
     }
-    .error-icon{flex-shrink:0;width:34px;height:34px;background:rgba(255,68,68,.12);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:15px}
-    .error-body{flex:1}
-    .error-area{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,68,68,.8);margin-bottom:3px}
-    .error-msg{font-size:13px;line-height:1.5;color:rgba(255,255,255,.8)}
 
     /* IMPROVEMENTS */
+    .section-title{font-family:'Montserrat',sans-serif;font-size:16px;font-weight:800;margin-bottom:14px;display:flex;align-items:center;gap:8px}
     .improve-card{
       background:rgba(255,255,255,.025);
       border:1px solid rgba(255,255,255,.06);
@@ -215,6 +209,16 @@
     .improve-item{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:rgba(255,255,255,.8);line-height:1.45;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.05)}
     .improve-item:last-child{border-bottom:none;padding-bottom:0}
     .improve-dot{flex-shrink:0;width:20px;height:20px;background:rgba(252,76,4,.12);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-top:1px}
+
+    /* CLOSING BOX */
+    .closing-box{
+      background:rgba(252,76,4,.06);
+      border:1px solid rgba(252,76,4,.2);
+      border-radius:18px;padding:20px 22px;margin-bottom:24px;
+      font-size:14px;line-height:1.7;color:rgba(255,255,255,.8);
+    }
+    .closing-box p{margin-bottom:10px}
+    .closing-box p:last-child{margin-bottom:0}
 
     /* SOCIAL PROOF */
     .proof-section{margin-bottom:24px}
@@ -343,36 +347,35 @@
     </div>
     <div class="badge">
       <svg width="11" height="11" viewBox="0 0 24 24" class="ico" stroke="var(--orange)" stroke-width="2"><path d="M13 2L4.5 13.5H12L11 22L19.5 10.5H12L13 2Z"/></svg>
-      Diagnóstico Gratuito
+      Quiz Gratuito
     </div>
-    <h1>Qual tipo de<br/><span>empreendedora</span><br/>você é no Instagram?</h1>
-    <p>Responda 8 perguntas e descubra <strong style="color:var(--white)">exatamente o que está te impedindo de vender</strong>, com um diagnóstico completo do seu perfil.</p>
+    <h1>Você é <span>estrategista</span><br/>no seu negócio?</h1>
+    <p>Responda 13 perguntas e descubra <strong style="color:var(--white)">seu nível estratégico</strong> com um diagnóstico completo e personalizado.</p>
     <div class="meta">
-      <span class="meta-i"><svg width="13" height="13" viewBox="0 0 24 24" class="ico" stroke="var(--orange)" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg> 3 minutos</span>
+      <span class="meta-i"><svg width="13" height="13" viewBox="0 0 24 24" class="ico" stroke="var(--orange)" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg> 4 minutos</span>
       <span class="meta-i"><svg width="13" height="13" viewBox="0 0 24 24" class="ico" stroke="var(--orange)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Diagnóstico real</span>
       <span class="meta-i"><svg width="13" height="13" viewBox="0 0 24 24" class="ico" stroke="var(--orange)" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> 35 mil+ alunas</span>
     </div>
     <button class="btn btn-primary pulse" onclick="go('s-q1')" style="max-width:400px">
-      Iniciar diagnóstico grátis
+      Iniciar quiz grátis
       <svg width="18" height="18" viewBox="0 0 24 24" class="ico" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
     </button>
     <p class="trust">Criado por Suellen Warmling · 15+ anos · Palestrante Sebrae · Autora</p>
   </div>
 </section>
 
-<!-- ══ PERGUNTAS 1-8 ═══════════════════════════════════════ -->
+<!-- ══ PERGUNTAS 1–13 ══════════════════════════════════════ -->
 
 <!-- Q1 -->
 <section class="screen" id="s-q1">
   <div class="q-inner">
-    <div class="q-head"><span class="q-num">Pergunta 1 de 8</span><span class="q-area">Posicionamento</span></div>
+    <div class="q-head"><span class="q-num">Pergunta 1 de 13</span><span class="q-area">Estratégia</span></div>
     <div class="q-dots" id="dots-1"></div>
-    <h2 class="q-title">Quando alguém visita seu perfil hoje, o que ela encontra?</h2>
+    <h2 class="q-title">Quando suas visualizações nos Stories caem, você:</h2>
     <div class="opts" id="opts-1">
-      <div class="opt" onclick="pick(1,'A',0,this,'Identificado. Isso é mais comum do que parece.')" tabindex="0"><span class="opt-l">A</span><span class="opt-t">Bio vazia ou desatualizada, sem deixar claro o que eu vendo</span></div>
-      <div class="opt" onclick="pick(1,'B',1,this,'Importante notar isso.')" tabindex="0"><span class="opt-l">B</span><span class="opt-t">Tem informações, mas não dá pra entender como eu ajudo de verdade</span></div>
-      <div class="opt" onclick="pick(1,'C',2,this,'Bom sinal, você tem base.')" tabindex="0"><span class="opt-l">C</span><span class="opt-t">Bio clara com o que faço, mas sem CTA ou link estratégico</span></div>
-      <div class="opt" onclick="pick(1,'D',3,this,'Ótimo! Continue assim.')" tabindex="0"><span class="opt-l">D</span><span class="opt-t">Perfil otimizado: bio clara, foto profissional, link e destaques organizados</span></div>
+      <div class="opt" onclick="pick(1,'A',0,this,'Identificado — esse é um padrão que custa caro.')" tabindex="0"><span class="opt-l">A</span><span class="opt-t">Para de postar</span></div>
+      <div class="opt" onclick="pick(1,'B',5,this,'Boa jogada estratégica!')" tabindex="0"><span class="opt-l">B</span><span class="opt-t">Publica um único story no dia com CTA</span></div>
+      <div class="opt" onclick="pick(1,'C',2,this,'Consistência é o caminho.')" tabindex="0"><span class="opt-l">C</span><span class="opt-t">Intensifica com rotina + interação</span></div>
     </div>
     <div class="q-foot">
       <button class="btn btn-primary disabled" id="btn-1" onclick="next('s-q2',2)">Próxima <svg width="17" height="17" viewBox="0 0 24 24" class="ico" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
@@ -383,14 +386,13 @@
 <!-- Q2 -->
 <section class="screen" id="s-q2">
   <div class="q-inner">
-    <div class="q-head"><span class="q-num">Pergunta 2 de 8</span><span class="q-area">Consistência</span></div>
+    <div class="q-head"><span class="q-num">Pergunta 2 de 13</span><span class="q-area">Estratégia</span></div>
     <div class="q-dots" id="dots-2"></div>
-    <h2 class="q-title">Quantas vezes você postou no feed ou stories nos últimos 7 dias?</h2>
+    <h2 class="q-title">Em uma ação de vendas, o que NÃO pode faltar?</h2>
     <div class="opts" id="opts-2">
-      <div class="opt" onclick="pick(2,'A',0,this,'Identificado. Isso explica muito.')" tabindex="0"><span class="opt-l">A</span><span class="opt-t">Não postei nada, fiquei sumida no Instagram</span></div>
-      <div class="opt" onclick="pick(2,'B',1,this,'Importante registrar isso.')" tabindex="0"><span class="opt-l">B</span><span class="opt-t">1 a 2 vezes, bem abaixo do que deveria</span></div>
-      <div class="opt" onclick="pick(2,'C',2,this,'Você está no caminho certo.')" tabindex="0"><span class="opt-l">C</span><span class="opt-t">3 a 5 vezes, tento manter mas não sempre</span></div>
-      <div class="opt" onclick="pick(2,'D',3,this,'Ótimo, essa consistência é valiosa.')" tabindex="0"><span class="opt-l">D</span><span class="opt-t">6 ou mais, tenho rotina de postagem estabelecida</span></div>
+      <div class="opt" onclick="pick(2,'A',5,this,'Exato! Antecipação + escassez + urgência é a tríade que vende.')" tabindex="0"><span class="opt-l">A</span><span class="opt-t">Antecipação, escassez, urgência</span></div>
+      <div class="opt" onclick="pick(2,'B',0,this,'Desconto sozinho não sustenta uma ação de vendas.')" tabindex="0"><span class="opt-l">B</span><span class="opt-t">Promoção e desconto</span></div>
+      <div class="opt" onclick="pick(2,'C',0,this,'Live shop é formato, não estratégia de vendas.')" tabindex="0"><span class="opt-l">C</span><span class="opt-t">Live shop</span></div>
     </div>
     <div class="q-foot">
       <button class="btn btn-primary disabled" id="btn-2" onclick="next('s-q3',3)">Próxima <svg width="17" height="17" viewBox="0 0 24 24" class="ico" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
@@ -402,14 +404,13 @@
 <!-- Q3 -->
 <section class="screen" id="s-q3">
   <div class="q-inner">
-    <div class="q-head"><span class="q-num">Pergunta 3 de 8</span><span class="q-area">Conteúdo</span></div>
+    <div class="q-head"><span class="q-num">Pergunta 3 de 13</span><span class="q-area">Estratégia</span></div>
     <div class="q-dots" id="dots-3"></div>
-    <h2 class="q-title">Que tipo de conteúdo você cria com mais frequência?</h2>
+    <h2 class="q-title">Se você precisa vender rápido essa semana sem investir, você:</h2>
     <div class="opts" id="opts-3">
-      <div class="opt" onclick="pick(3,'A',0,this,'Esse padrão explica muito sobre os resultados.')" tabindex="0"><span class="opt-l">A</span><span class="opt-t">Só foto do produto com preço, quase não falo mais nada</span></div>
-      <div class="opt" onclick="pick(3,'B',1,this,'Faz sentido. Vamos organizar isso.')" tabindex="0"><span class="opt-l">B</span><span class="opt-t">Fotos e stories variados, mas sem estratégia definida</span></div>
-      <div class="opt" onclick="pick(3,'C',2,this,'Bom, você já tem a direção certa.')" tabindex="0"><span class="opt-l">C</span><span class="opt-t">Mistura de conteúdo educativo, pessoal e vendas</span></div>
-      <div class="opt" onclick="pick(3,'D',3,this,'Perfeito. Esse é o nível que converte.')" tabindex="0"><span class="opt-l">D</span><span class="opt-t">Conteúdo estratégico que educa, conecta e leva à venda de forma natural</span></div>
+      <div class="opt" onclick="pick(3,'A',0,this,'Seguidores não pagam contas essa semana.')" tabindex="0"><span class="opt-l">A</span><span class="opt-t">Cria conteúdo pra crescer seguidores</span></div>
+      <div class="opt" onclick="pick(3,'B',2,this,'Prospecção é válida, mas existe algo mais rápido.')" tabindex="0"><span class="opt-l">B</span><span class="opt-t">Faz prospecção</span></div>
+      <div class="opt" onclick="pick(3,'C',5,this,'Perfeito! Ticket médio é o caminho mais rápido.')" tabindex="0"><span class="opt-l">C</span><span class="opt-t">Aumenta ticket médio</span></div>
     </div>
     <div class="q-foot">
       <button class="btn btn-primary disabled" id="btn-3" onclick="next('s-q4',4)">Próxima <svg width="17" height="17" viewBox="0 0 24 24" class="ico" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
@@ -421,14 +422,13 @@
 <!-- Q4 -->
 <section class="screen" id="s-q4">
   <div class="q-inner">
-    <div class="q-head"><span class="q-num">Pergunta 4 de 8</span><span class="q-area">Vendas</span></div>
+    <div class="q-head"><span class="q-num">Pergunta 4 de 13</span><span class="q-area">Estratégia</span></div>
     <div class="q-dots" id="dots-4"></div>
-    <h2 class="q-title">Como você fala dos seus produtos ou serviços no Instagram?</h2>
+    <h2 class="q-title">Sobre tráfego pago para negócio local, como um restaurante por quilo — qual campanha seria a ideal?</h2>
     <div class="opts" id="opts-4">
-      <div class="opt" onclick="pick(4,'A',0,this,'Identificado. Isso custa muito em vendas perdidas.')" tabindex="0"><span class="opt-l">A</span><span class="opt-t">Raramente falo, fico esperando as pessoas perguntarem por conta</span></div>
-      <div class="opt" onclick="pick(4,'B',1,this,'Faz sentido. Falta um sistema aqui.')" tabindex="0"><span class="opt-l">B</span><span class="opt-t">Falo quando lembro, sem frequência ou estratégia definida</span></div>
-      <div class="opt" onclick="pick(4,'C',2,this,'Bom ponto de partida, dá pra otimizar.')" tabindex="0"><span class="opt-l">C</span><span class="opt-t">Faço ofertas diretas de vez em quando com alguma frequência</span></div>
-      <div class="opt" onclick="pick(4,'D',3,this,'Ótimo, isso é funil funcionando.')" tabindex="0"><span class="opt-l">D</span><span class="opt-t">Tenho uma sequência de conteúdo que naturalmente conduz à venda</span></div>
+      <div class="opt" onclick="pick(4,'A',5,this,'Correto! Alcance é o objetivo ideal para negócio local.')" tabindex="0"><span class="opt-l">A</span><span class="opt-t">Campanha de alcance</span></div>
+      <div class="opt" onclick="pick(4,'B',0,this,'Mensagens não é o melhor objetivo aqui.')" tabindex="0"><span class="opt-l">B</span><span class="opt-t">Campanha de mensagens (WhatsApp)</span></div>
+      <div class="opt" onclick="pick(4,'C',0,this,'Conversão exige pixel e estrutura mais complexa.')" tabindex="0"><span class="opt-l">C</span><span class="opt-t">Campanha de conversão</span></div>
     </div>
     <div class="q-foot">
       <button class="btn btn-primary disabled" id="btn-4" onclick="next('s-q5',5)">Próxima <svg width="17" height="17" viewBox="0 0 24 24" class="ico" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
@@ -440,14 +440,13 @@
 <!-- Q5 -->
 <section class="screen" id="s-q5">
   <div class="q-inner">
-    <div class="q-head"><span class="q-num">Pergunta 5 de 8</span><span class="q-area">Conversão</span></div>
+    <div class="q-head"><span class="q-num">Pergunta 5 de 13</span><span class="q-area">Estratégia</span></div>
     <div class="q-dots" id="dots-5"></div>
-    <h2 class="q-title">Nos seus posts, você pede para a pessoa tomar alguma ação?</h2>
+    <h2 class="q-title">Sobre "turbinar" posts pelo botão azul, o que é a maior verdade?</h2>
     <div class="opts" id="opts-5">
-      <div class="opt" onclick="pick(5,'A',0,this,'Encontramos um ponto crítico aqui.')" tabindex="0"><span class="opt-l">A</span><span class="opt-t">Nunca, não sei o que pedir ou como pedir</span></div>
-      <div class="opt" onclick="pick(5,'B',1,this,'Esse detalhe faz toda a diferença.')" tabindex="0"><span class="opt-l">B</span><span class="opt-t">Às vezes coloco "me chama no direct", mas sem estratégia</span></div>
-      <div class="opt" onclick="pick(5,'C',2,this,'Você está no caminho, falta afinar.')" tabindex="0"><span class="opt-l">C</span><span class="opt-t">Peço ação com alguma frequência, mas sem um próximo passo claro</span></div>
-      <div class="opt" onclick="pick(5,'D',3,this,'Isso é o que separa quem vende de quem não vende.')" tabindex="0"><span class="opt-l">D</span><span class="opt-t">Sempre tenho um CTA específico e estratégico em cada post</span></div>
+      <div class="opt" onclick="pick(5,'A',1,this,'Vender com turbinar é muito difícil.')" tabindex="0"><span class="opt-l">A</span><span class="opt-t">Funciona pra vender mais</span></div>
+      <div class="opt" onclick="pick(5,'B',5,this,'Exato! Turbinar serve para crescer seguidores, não para vender.')" tabindex="0"><span class="opt-l">B</span><span class="opt-t">Funciona pra crescer seguidores</span></div>
+      <div class="opt" onclick="pick(5,'C',0,this,'Funciona sim, mas com objetivo específico.')" tabindex="0"><span class="opt-l">C</span><span class="opt-t">Não funciona</span></div>
     </div>
     <div class="q-foot">
       <button class="btn btn-primary disabled" id="btn-5" onclick="next('s-q6',6)">Próxima <svg width="17" height="17" viewBox="0 0 24 24" class="ico" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
@@ -459,14 +458,13 @@
 <!-- Q6 -->
 <section class="screen" id="s-q6">
   <div class="q-inner">
-    <div class="q-head"><span class="q-num">Pergunta 6 de 8</span><span class="q-area">Processo & IA</span></div>
+    <div class="q-head"><span class="q-num">Pergunta 6 de 13</span><span class="q-area">Estratégia</span></div>
     <div class="q-dots" id="dots-6"></div>
-    <h2 class="q-title">Como você cria suas legendas, ideias e conteúdo hoje?</h2>
+    <h2 class="q-title">O jeito mais fácil de crescer seguidores é:</h2>
     <div class="opts" id="opts-6">
-      <div class="opt" onclick="pick(6,'A',0,this,'Isso explica por que o conteúdo não sai como deveria.')" tabindex="0"><span class="opt-l">A</span><span class="opt-t">Na intuição pura, sem processo ou ferramenta</span></div>
-      <div class="opt" onclick="pick(6,'B',1,this,'Entendido. Há um caminho melhor aqui.')" tabindex="0"><span class="opt-l">B</span><span class="opt-t">Copio referências de outros perfis ou uso templates aleatórios</span></div>
-      <div class="opt" onclick="pick(6,'C',2,this,'Você tem a base, falta sistematizar.')" tabindex="0"><span class="opt-l">C</span><span class="opt-t">Tenho alguns processos mas é inconsistente, depende do dia</span></div>
-      <div class="opt" onclick="pick(6,'D',3,this,'Isso é alavancagem real. Ótimo.')" tabindex="0"><span class="opt-l">D</span><span class="opt-t">Uso IA ou um método estruturado para criar rápido e com qualidade</span></div>
+      <div class="opt" onclick="pick(6,'A',5,this,'Correto! Modelar vídeos virais do nicho é a estratégia mais eficiente.')" tabindex="0"><span class="opt-l">A</span><span class="opt-t">Modelando vídeos virais</span></div>
+      <div class="opt" onclick="pick(6,'B',2,this,'Anúncios ajudam, mas não são o jeito mais fácil.')" tabindex="0"><span class="opt-l">B</span><span class="opt-t">Investindo em anúncios</span></div>
+      <div class="opt" onclick="pick(6,'C',1,this,'Influencers têm custo alto e retorno incerto.')" tabindex="0"><span class="opt-l">C</span><span class="opt-t">Contratando influencers</span></div>
     </div>
     <div class="q-foot">
       <button class="btn btn-primary disabled" id="btn-6" onclick="next('s-q7',7)">Próxima <svg width="17" height="17" viewBox="0 0 24 24" class="ico" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
@@ -478,14 +476,13 @@
 <!-- Q7 -->
 <section class="screen" id="s-q7">
   <div class="q-inner">
-    <div class="q-head"><span class="q-num">Pergunta 7 de 8</span><span class="q-area">Bloqueio</span></div>
+    <div class="q-head"><span class="q-num">Pergunta 7 de 13</span><span class="q-area">Estratégia</span></div>
     <div class="q-dots" id="dots-7"></div>
-    <h2 class="q-title">O que mais te impede de ser consistente no Instagram?</h2>
+    <h2 class="q-title">Seu conteúdo hoje:</h2>
     <div class="opts" id="opts-7">
-      <div class="opt" onclick="pick(7,'A',0,this,'Bloqueio criativo. Tem solução.')" tabindex="0"><span class="opt-l">A</span><span class="opt-t">Não sei o que falar, trava total na hora de criar qualquer coisa</span></div>
-      <div class="opt" onclick="pick(7,'B',1,this,'Falta de sistema, não de tempo.')" tabindex="0"><span class="opt-l">B</span><span class="opt-t">Falta de tempo, não consigo encaixar na correria do dia a dia</span></div>
-      <div class="opt" onclick="pick(7,'C',2,this,'Coragem identificada. Falta o método.')" tabindex="0"><span class="opt-l">C</span><span class="opt-t">Tenho conteúdo mas não publico, medo de julgamento ou de errar</span></div>
-      <div class="opt" onclick="pick(7,'D',3,this,'Excelente. Mentalidade de crescimento.')" tabindex="0"><span class="opt-l">D</span><span class="opt-t">Consigo ser consistente, mas ainda quero melhorar qualidade e resultado</span></div>
+      <div class="opt" onclick="pick(7,'A',0,this,'Arte bonita não vende sem rosto e conexão.')" tabindex="0"><span class="opt-l">A</span><span class="opt-t">Muitas artes de acordo com o branding da marca</span></div>
+      <div class="opt" onclick="pick(7,'B',0,this,'Delegar sem estratégia não gera resultado.')" tabindex="0"><span class="opt-l">B</span><span class="opt-t">Feito 100% por social media ou agência</span></div>
+      <div class="opt" onclick="pick(7,'C',5,this,'Perfeito! Reels com você aparecer é o que mais converte.')" tabindex="0"><span class="opt-l">C</span><span class="opt-t">Tem reels toda semana e eu apareço</span></div>
     </div>
     <div class="q-foot">
       <button class="btn btn-primary disabled" id="btn-7" onclick="next('s-q8',8)">Próxima <svg width="17" height="17" viewBox="0 0 24 24" class="ico" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
@@ -497,38 +494,105 @@
 <!-- Q8 -->
 <section class="screen" id="s-q8">
   <div class="q-inner">
-    <div class="q-head"><span class="q-num">Pergunta 8 de 8</span><span class="q-area">Resultado</span></div>
+    <div class="q-head"><span class="q-num">Pergunta 8 de 13</span><span class="q-area">Estratégia</span></div>
     <div class="q-dots" id="dots-8"></div>
-    <h2 class="q-title">Nos últimos 30 dias, quantas vendas vieram diretamente do Instagram?</h2>
+    <h2 class="q-title">Seu atendimento no WhatsApp hoje tem:</h2>
     <div class="opts" id="opts-8">
-      <div class="opt" onclick="pick(8,'A',0,this,'Encontramos o ponto central do diagnóstico.')" tabindex="0"><span class="opt-l">A</span><span class="opt-t">Nenhuma, o Instagram não está gerando vendas para mim</span></div>
-      <div class="opt" onclick="pick(8,'B',1,this,'Baixo retorno pro esforço. Isso vai mudar.')" tabindex="0"><span class="opt-l">B</span><span class="opt-t">1 a 3 vendas, muito pouco pro esforço que faço</span></div>
-      <div class="opt" onclick="pick(8,'C',2,this,'Está funcionando. Falta otimizar.')" tabindex="0"><span class="opt-l">C</span><span class="opt-t">4 a 10 vendas, está funcionando mas poderia ser muito mais</span></div>
-      <div class="opt" onclick="pick(8,'D',3,this,'Ótimo resultado! Agora é escalar.')" tabindex="0"><span class="opt-l">D</span><span class="opt-t">Mais de 10 vendas, o Instagram é uma fonte real de receita</span></div>
+      <div class="opt" onclick="pick(8,'A',1,this,'Agilidade é importante, mas não basta.')" tabindex="0"><span class="opt-l">A</span><span class="opt-t">Foco em agilidade</span></div>
+      <div class="opt" onclick="pick(8,'B',5,this,'Isso é atendimento que vende!')" tabindex="0"><span class="opt-l">B</span><span class="opt-t">Padrão, perguntas e quebra de objeção</span></div>
+      <div class="opt" onclick="pick(8,'C',4,this,'Excelente — perfil comportamental é estratégia avançada.')" tabindex="0"><span class="opt-l">C</span><span class="opt-t">Olhar atento ao perfil comportamental do cliente</span></div>
     </div>
     <div class="q-foot">
-      <button class="btn btn-primary disabled" id="btn-8" onclick="next('s-nicho',9)">Última etapa <svg width="17" height="17" viewBox="0 0 24 24" class="ico" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
+      <button class="btn btn-primary disabled" id="btn-8" onclick="next('s-q9',9)">Próxima <svg width="17" height="17" viewBox="0 0 24 24" class="ico" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
       <button class="btn btn-ghost" onclick="go('s-q7')">← Voltar</button>
     </div>
   </div>
 </section>
 
-<!-- ══ NICHO (Melhoria 6) ══════════════════════════════════ -->
-<section class="screen" id="s-nicho">
+<!-- Q9 -->
+<section class="screen" id="s-q9">
   <div class="q-inner">
-    <div class="q-head"><span class="q-num" style="color:var(--green)">Quase lá!</span><span class="q-area">Personalização</span></div>
-    <div style="height:8px"></div>
-    <h2 class="q-title">Qual é o tipo do seu negócio?</h2>
-    <p style="font-size:14px;color:var(--muted);margin-bottom:20px;line-height:1.5">Isso personaliza seu diagnóstico com mais precisão.</p>
-    <div class="opts" id="opts-nicho">
-      <div class="opt" onclick="pickNicho('loja',this)" tabindex="0"><span class="opt-l">🛍️</span><span class="opt-t">Loja física ou e-commerce: vendo produtos</span></div>
-      <div class="opt" onclick="pickNicho('servico',this)" tabindex="0"><span class="opt-l">✂️</span><span class="opt-t">Serviço presencial: salão, estética, alimentação etc.</span></div>
-      <div class="opt" onclick="pickNicho('liberal',this)" tabindex="0"><span class="opt-l">👩‍⚕️</span><span class="opt-t">Profissional liberal: psicóloga, nutricionista, advogada etc.</span></div>
-      <div class="opt" onclick="pickNicho('digital',this)" tabindex="0"><span class="opt-l">💻</span><span class="opt-t">Negócio digital: infoproduto, consultoria online, coaching</span></div>
+    <div class="q-head"><span class="q-num">Pergunta 9 de 13</span><span class="q-area">Estratégia</span></div>
+    <div class="q-dots" id="dots-9"></div>
+    <h2 class="q-title">Você sabe qual foi seu post com mais alcance até hoje?</h2>
+    <div class="opts" id="opts-9">
+      <div class="opt" onclick="pick(9,'A',5,this,'Ótimo! Quem analisa os dados toma decisões melhores.')" tabindex="0"><span class="opt-l">A</span><span class="opt-t">Sei</span></div>
+      <div class="opt" onclick="pick(9,'B',1,this,'Seus dados são ouro — vale a pena acompanhar.')" tabindex="0"><span class="opt-l">B</span><span class="opt-t">Não sei</span></div>
+      <div class="opt" onclick="pick(9,'C',0,this,'Essa informação está no Instagram Insights — vamos explorar isso.')" tabindex="0"><span class="opt-l">C</span><span class="opt-t">Onde vê isso?</span></div>
     </div>
     <div class="q-foot">
-      <button class="btn btn-primary disabled" id="btn-nicho" onclick="showLoad()">Ver meu diagnóstico completo <svg width="17" height="17" viewBox="0 0 24 24" class="ico" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
+      <button class="btn btn-primary disabled" id="btn-9" onclick="next('s-q10',10)">Próxima <svg width="17" height="17" viewBox="0 0 24 24" class="ico" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
       <button class="btn btn-ghost" onclick="go('s-q8')">← Voltar</button>
+    </div>
+  </div>
+</section>
+
+<!-- Q10 -->
+<section class="screen" id="s-q10">
+  <div class="q-inner">
+    <div class="q-head"><span class="q-num">Pergunta 10 de 13</span><span class="q-area">Conteúdo</span></div>
+    <div class="q-dots" id="dots-10"></div>
+    <h2 class="q-title">Qual gancho você usaria em um post?</h2>
+    <div class="opts" id="opts-10">
+      <div class="opt" onclick="pick(10,'A',1,this,'Esse gancho é muito direto e não gera curiosidade.')" tabindex="0"><span class="opt-l">A</span><span class="opt-t">"Benefícios da Airfryer XYZ"</span></div>
+      <div class="opt" onclick="pick(10,'B',1,this,'Melhor, mas ainda muito óbvio.')" tabindex="0"><span class="opt-l">B</span><span class="opt-t">"Você sabia que Airfryer é mais saudável?"</span></div>
+      <div class="opt" onclick="pick(10,'C',5,this,'Esse é o gancho que para o scroll! Perfeito.')" tabindex="0"><span class="opt-l">C</span><span class="opt-t">"Coisas que eu colocaria na minha casa hoje"</span></div>
+    </div>
+    <div class="q-foot">
+      <button class="btn btn-primary disabled" id="btn-10" onclick="next('s-q11',11)">Próxima <svg width="17" height="17" viewBox="0 0 24 24" class="ico" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
+      <button class="btn btn-ghost" onclick="go('s-q9')">← Voltar</button>
+    </div>
+  </div>
+</section>
+
+<!-- Q11 -->
+<section class="screen" id="s-q11">
+  <div class="q-inner">
+    <div class="q-head"><span class="q-num">Pergunta 11 de 13</span><span class="q-area">Conteúdo</span></div>
+    <div class="q-dots" id="dots-11"></div>
+    <h2 class="q-title">Frequência ideal de conteúdo:</h2>
+    <div class="opts" id="opts-11">
+      <div class="opt" onclick="pick(11,'A',0,this,'Uma vez por semana é pouco para o algoritmo.')" tabindex="0"><span class="opt-l">A</span><span class="opt-t">Uma vez na semana com capricho</span></div>
+      <div class="opt" onclick="pick(11,'B',5,this,'Exato! Volume é o que forma habilidade e alcance.')" tabindex="0"><span class="opt-l">B</span><span class="opt-t">Todo dia — qualidade se constrói com quantidade</span></div>
+      <div class="opt" onclick="pick(11,'C',0,this,'Esperar ter algo relevante gera inconsistência.')" tabindex="0"><span class="opt-l">C</span><span class="opt-t">Quando tiver algo relevante — não adianta postar por postar</span></div>
+    </div>
+    <div class="q-foot">
+      <button class="btn btn-primary disabled" id="btn-11" onclick="next('s-q12',12)">Próxima <svg width="17" height="17" viewBox="0 0 24 24" class="ico" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
+      <button class="btn btn-ghost" onclick="go('s-q10')">← Voltar</button>
+    </div>
+  </div>
+</section>
+
+<!-- Q12 -->
+<section class="screen" id="s-q12">
+  <div class="q-inner">
+    <div class="q-head"><span class="q-num">Pergunta 12 de 13</span><span class="q-area">Ferramentas & IA</span></div>
+    <div class="q-dots" id="dots-12"></div>
+    <h2 class="q-title">Qual a melhor IA pra criar imagem?</h2>
+    <div class="opts" id="opts-12">
+      <div class="opt" onclick="pick(12,'A',0,this,'Claude não cria imagens — é especialista em texto e análise.')" tabindex="0"><span class="opt-l">A</span><span class="opt-t">Claude</span></div>
+      <div class="opt" onclick="pick(12,'B',5,this,'Correto! ChatGPT com DALL-E é a melhor opção para imagens.')" tabindex="0"><span class="opt-l">B</span><span class="opt-t">ChatGPT</span></div>
+    </div>
+    <div class="q-foot">
+      <button class="btn btn-primary disabled" id="btn-12" onclick="next('s-q13',13)">Próxima <svg width="17" height="17" viewBox="0 0 24 24" class="ico" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
+      <button class="btn btn-ghost" onclick="go('s-q11')">← Voltar</button>
+    </div>
+  </div>
+</section>
+
+<!-- Q13 -->
+<section class="screen" id="s-q13">
+  <div class="q-inner">
+    <div class="q-head"><span class="q-num">Pergunta 13 de 13</span><span class="q-area">Ferramentas & IA</span></div>
+    <div class="q-dots" id="dots-13"></div>
+    <h2 class="q-title">Qual a melhor IA pra criar planilhas, PDFs e integração com ferramentas externas?</h2>
+    <div class="opts" id="opts-13">
+      <div class="opt" onclick="pick(13,'A',5,this,'Correto! Claude é superior para estruturar, analisar e integrar dados.')" tabindex="0"><span class="opt-l">A</span><span class="opt-t">Claude</span></div>
+      <div class="opt" onclick="pick(13,'B',0,this,'ChatGPT é forte em imagem, mas Claude leva vantagem aqui.')" tabindex="0"><span class="opt-l">B</span><span class="opt-t">ChatGPT</span></div>
+    </div>
+    <div class="q-foot">
+      <button class="btn btn-primary disabled" id="btn-13" onclick="showLoad()">Ver meu resultado <svg width="17" height="17" viewBox="0 0 24 24" class="ico" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
+      <button class="btn btn-ghost" onclick="go('s-q12')">← Voltar</button>
     </div>
   </div>
 </section>
@@ -536,12 +600,12 @@
 <!-- ══ LOADING ════════════════════════════════════════════ -->
 <section class="screen" id="s-load">
   <div class="orbital"></div>
-  <h2 class="load-title">Analisando seu diagnóstico…</h2>
-  <p class="load-sub">Processando suas respostas</p>
+  <h2 class="load-title">Calculando seu resultado…</h2>
+  <p class="load-sub">Analisando suas respostas</p>
   <div class="load-steps">
-    <div class="lstep" id="ls1"><span class="lstep-ic">1</span>Mapeando áreas críticas</div>
-    <div class="lstep" id="ls2"><span class="lstep-ic">2</span>Identificando erros específicos</div>
-    <div class="lstep" id="ls3"><span class="lstep-ic">3</span>Calculando saúde do Instagram</div>
+    <div class="lstep" id="ls1"><span class="lstep-ic">1</span>Mapeando seu nível estratégico</div>
+    <div class="lstep" id="ls2"><span class="lstep-ic">2</span>Identificando pontos de melhoria</div>
+    <div class="lstep" id="ls3"><span class="lstep-ic">3</span>Calculando sua nota</div>
     <div class="lstep" id="ls4"><span class="lstep-ic">4</span>Preparando recomendações</div>
   </div>
 </section>
@@ -550,51 +614,21 @@
 <section class="screen" id="s-result">
   <div class="result-wrap" id="result-body"></div>
   <div class="qfooter">
-    © Suellen Warmling · Diagnóstico gratuito
+    © Suellen Warmling · Quiz gratuito
     <br/>
-    <button class="btn btn-ghost" onclick="restart()" style="margin-top:12px;font-size:11px;padding:8px 16px;width:auto">Refazer o diagnóstico</button>
+    <button class="btn btn-ghost" onclick="restart()" style="margin-top:12px;font-size:11px;padding:8px 16px;width:auto">Refazer o quiz</button>
   </div>
 </section>
 
 <script>
 const LINK='https://lp.suellenwarmling.com.br/apareca-e-venda-v5?xcod=%7B%22vid%22%3A%22%7B%7Bad.id%7D%22%2C%22vsrc%22%3A%22diagnostico%22%2C%22u%22%3A%22756fddd0-a167-452b-b2ee-56000ab654f1%22%2C%22url%22%3A%22lp.suellenwarmling.com.br%2Fapareca-e-venda-v5%22%2C%22r%22%3A%22%22%2C%22v%22%3A1%7D';
 const AV='https://lp.suellenwarmling.com.br/wp-content/uploads/2024/09/suellen-foto-1.jpg';
-const TOTAL_Q=8; // perguntas reais (nicho não conta no score)
+const TOTAL_Q=13;
+const MAX_PTS=60;
 const scores={};
-let nicho='';
 
 // Event date: May 25, 2026 19:30 BRT (UTC-3)
 const EVENT_DATE=new Date('2026-05-25T19:30:00-03:00');
-
-const ERR={
-  1:{A:{area:'Posicionamento',icon:'👤',msg:'Seu perfil não está convertendo: quem chega não entende o que você faz nem como te contratar'},
-     B:{area:'Posicionamento',icon:'👤',msg:'Sua proposta de valor está confusa. A pessoa visita mas não sente que você é para ela'}},
-  2:{A:{area:'Consistência',icon:'📅',msg:'Você sumiu do Instagram. Sem presença o algoritmo para de te mostrar e as vendas secam'},
-     B:{area:'Consistência',icon:'📅',msg:'Sua frequência está muito baixa: 1 a 2 posts por semana não sustentam crescimento'}},
-  3:{A:{area:'Conteúdo',icon:'📝',msg:'Você só posta para vender. O público foge de perfil que só quer dinheiro sem entregar valor antes'},
-     B:{area:'Conteúdo',icon:'📝',msg:'Seu conteúdo não tem estratégia. Posts aleatórios não constroem autoridade'}},
-  4:{A:{area:'Vendas',icon:'💰',msg:'Você está esperando o cliente aparecer. No Instagram quem não vende ativamente não vende'},
-     B:{area:'Vendas',icon:'💰',msg:'Você não tem rotina de vendas. Sem consistência o faturamento fica irregular todo mês'}},
-  5:{A:{area:'Conversão',icon:'🎯',msg:'Seus posts não têm chamada para ação. O seguidor lê, curte e vai embora sem comprar'},
-     B:{area:'Conversão',icon:'🎯',msg:'Seus CTAs são genéricos: "me chama no direct" não convence quem está em dúvida'}},
-  6:{A:{area:'Processo & IA',icon:'⚡',msg:'Você perde horas criando na intuição. Sem processo o conteúdo demora e sai sem qualidade'},
-     B:{area:'Processo & IA',icon:'⚡',msg:'Você não usa IA nem método. Está trabalhando mais do que precisa pra um resultado abaixo do potencial'}},
-  7:{A:{area:'Bloqueio',icon:'🔒',msg:'Você trava na hora de criar. Não sabe o que falar e acaba não postando por dias'},
-     B:{area:'Bloqueio',icon:'⏰',msg:'O Instagram fica sempre pra depois. Sem um sistema rápido ele não entra na sua rotina'}},
-  8:{A:{area:'Resultado',icon:'📊',msg:'O Instagram não está gerando receita. Todo esse esforço não está se convertendo em vendas'},
-     B:{area:'Resultado',icon:'📊',msg:'Sua conversão está muito baixa. Você trabalha mas o retorno não compensa o esforço'}},
-};
-
-const IMPROVE={
-  'Posicionamento':'Otimizar o perfil com bio clara, CTA e foto profissional que transmita autoridade',
-  'Consistência':'Criar uma rotina de postagem sustentável, mesmo que seja 3x por semana',
-  'Conteúdo':'Aprender a misturar conteúdo educativo, de conexão e de venda de forma estratégica',
-  'Vendas':'Ter uma rotina ativa de vendas. O Instagram não vende sozinho',
-  'Conversão':'Usar CTAs específicos e estratégicos em cada post para guiar o seguidor à compra',
-  'Processo & IA':'Implementar um processo com IA para criar conteúdo de qualidade em minutos',
-  'Bloqueio':'Quebrar o bloqueio com um método claro de geração de ideias e criação de conteúdo',
-  'Resultado':'Entender quais ações de conteúdo realmente convertem e focar nelas',
-};
 
 const PROOFS=[
   {text:'Aprendi em 2 noites o que tentei aprender em 1 ano sozinha. Meu direct lotou na semana seguinte.',author:'Carla S., designer gráfica'},
@@ -610,8 +644,7 @@ function go(id){
 }
 
 function setProgress(step){
-  const total=TOTAL_Q+1; // +1 for nicho
-  const pct=Math.round((step/total)*100);
+  const pct=Math.round((step/TOTAL_Q)*100);
   const wrap=document.getElementById('pgwrap');
   const bar=document.getElementById('pgbar');
   const pctEl=document.getElementById('pgpct');
@@ -639,7 +672,7 @@ function buildDots(current){
 }
 for(let i=1;i<=TOTAL_Q;i++)buildDots(i);
 
-/* ── Micro Reward Toast (Melhoria 4) ───────────── */
+/* ── Micro Reward Toast ──────────────────────── */
 let toastTimer=null;
 function showToast(msg){
   const t=document.getElementById('toast');
@@ -659,18 +692,10 @@ function pick(q,letter,pts,el,toastMsg){
   showToast(toastMsg);
 }
 
-function pickNicho(n,el){
-  document.getElementById('opts-nicho').querySelectorAll('.opt').forEach(o=>o.classList.remove('sel'));
-  el.classList.add('sel');
-  nicho=n;
-  document.getElementById('btn-nicho').classList.remove('disabled');
-  showToast('Perfeito, diagnóstico personalizado para o seu nicho.');
-}
-
 /* ── Loading ──────────────────────────────────── */
 function showLoad(){
   go('s-load');
-  setProgress(TOTAL_Q+1);
+  setProgress(TOTAL_Q);
   const steps=['ls1','ls2','ls3','ls4'];
   steps.forEach((id,i)=>setTimeout(()=>{
     const el=document.getElementById(id);
@@ -681,7 +706,7 @@ function showLoad(){
 }
 function chk(){return`<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#61CE70" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>`;}
 
-/* ── Countdown (Melhoria 7) ────────────────────── */
+/* ── Countdown ────────────────────────────────── */
 function getCountdown(){
   const now=new Date();
   const diff=EVENT_DATE-now;
@@ -708,46 +733,64 @@ function startCountdownInterval(){
 /* ── Result ───────────────────────────────────── */
 function buildResult(){
   const total=Object.values(scores).reduce((s,v)=>s+v.pts,0);
-  const maxPts=TOTAL_Q*3;
-  const rawPct=Math.round((total/maxPts)*100);
-  const pct=Math.min(rawPct,85);
+  const rawNota=(total/MAX_PTS)*10;
+  const nota=Math.min(rawNota,8.9);
+  const notaDisplay=nota.toFixed(1);
+  const barPct=Math.round((total/MAX_PTS)*100);
 
-  let level,levelColor;
-  if(pct<=33){level='Instagram em Crise';levelColor='#FF4444';}
-  else if(pct<=66){level='Instagram Travado';levelColor='#F5C842';}
-  else{level='Quase Lá: Falta Afinar';levelColor='#FC8C04';}
+  let level,levelColor,levelIcon,diagnosis,actions,ctaText,scoreHead;
 
-  // CTA personalizado por score (Melhoria 2)
-  let ctaText;
-  if(pct<=33)ctaText='Quero transformar meu Instagram em 2 noites';
-  else if(pct<=66)ctaText='Quero desbloquear meu Instagram de vez';
-  else ctaText='Quero os ajustes que vão dobrar minhas vendas';
-
-  const errors=[];
-  const improveAreas=new Set();
-  for(let q=1;q<=TOTAL_Q;q++){
-    const ans=scores[q];
-    if(ans&&ERR[q]&&ERR[q][ans.letter]){
-      errors.push(ERR[q][ans.letter]);
-      improveAreas.add(ERR[q][ans.letter].area);
-    }
+  if(total<=20){
+    level='Empreendedor Amador';
+    levelColor='#FF4444';
+    levelIcon='❌';
+    scoreHead='Seu negócio está operando <span style="color:var(--red)">mais no improviso do que na estratégia</span>';
+    diagnosis='Você está operando mais no improviso do que na estratégia. Suas decisões não seguem um plano claro, e isso faz você depender da sorte, do algoritmo ou de momentos pontuais para vender.';
+    actions=[
+      'Defina uma ação de vendas por semana (com início, meio e fim)',
+      'Estruture um roteiro básico de atendimento no WhatsApp',
+      'Pare de postar aleatório: escolha 1 objetivo por conteúdo (atrair ou vender)',
+      'Crie sua primeira campanha simples com antecipação + urgência',
+      'Identifique o formato campeão e comece a repetir com frequência, se baseando no que já viralizou no seu nicho',
+      'Identifique onde usar inteligência artificial no seu dia a dia para ganhar tempo e pensar com mais estratégia',
+    ];
+    ctaText='Quero sair do improviso e ter estratégia';
+  } else if(total<=40){
+    level='Empreendedor no Processo';
+    levelColor='#F5C842';
+    levelIcon='⚠️';
+    scoreHead='Você tem potencial, mas ainda está <span style="color:var(--yellow)">perdendo dinheiro por falta de consistência</span>';
+    diagnosis='Você já faz algumas coisas certas, mas ainda sem consistência. Tem potencial claro, mas perde dinheiro por não repetir o que funciona e por não ter uma estratégia bem amarrada.';
+    actions=[
+      'Identifique o que já deu resultado e repita isso com frequência',
+      'Organize seu conteúdo em 3 pilares: atração, conexão e venda',
+      'Estruture melhor seu WhatsApp com respostas padrão + quebra de objeção',
+      'Comece a testar tráfego para mensagens (WhatsApp)',
+      'Crie ações de vendas mais completas, não só posts soltos',
+      'Identifique seu formato campeão e replique com consistência, olhando o que mais performa no seu nicho',
+      'Use inteligência artificial para criar conteúdo mais rápido, melhorar suas respostas e estruturar suas ações',
+    ];
+    ctaText='Quero parar de testar e começar a escalar';
+  } else {
+    level='Empreendedor Estrategista';
+    levelColor='#61CE70';
+    levelIcon='✅';
+    scoreHead='Você já pensa como estrategista, mas ainda está <span style="color:var(--orange)">deixando dinheiro na mesa</span>';
+    diagnosis='Você já pensa como estrategista e tem boa base. Mas ainda está deixando dinheiro na mesa por falta de otimização, escala e aprofundamento das estratégias.';
+    actions=[
+      'Aumente seu faturamento com ticket médio e recorrência',
+      'Escale com tráfego pago estruturado (principalmente para WhatsApp)',
+      'Otimize seu conteúdo para gerar mais desejo e conversão (não só alcance)',
+      'Crie campanhas mais fortes com antecipação + narrativa + prova',
+      'Estruture um processo de vendas mais previsível',
+      'Identifique e refine seu formato campeão, repetindo com inteligência e variações estratégicas',
+      'Use inteligência artificial para ganhar escala, automatizar partes do marketing e tomar decisões mais rápidas',
+    ];
+    ctaText='Quero os ajustes que vão dobrar minhas vendas';
   }
-  const improvList=[...improveAreas].map(a=>IMPROVE[a]||a);
 
-  // Headline
-  const scoreHead=pct<=33
-    ?'Seu Instagram está funcionando <span style="color:var(--red)">abaixo do potencial</span>'
-    :pct<=66
-    ?'Seu Instagram tem base, mas está <span style="color:var(--yellow)">travado na metade do caminho</span>'
-    :'Você está bem, mas <span style="color:var(--orange)">perdendo vendas nos detalhes</span>';
+  const actionsHTML=actions.map(a=>`<div class="improve-item"><div class="improve-dot">${chk()}</div><span>${a}</span></div>`).join('');
 
-  const errorsHTML=errors.length
-    ?errors.map(e=>`<div class="error-card"><div class="error-icon">${e.icon}</div><div class="error-body"><div class="error-area">${e.area}</div><div class="error-msg">${e.msg}</div></div></div>`).join('')
-    :`<div class="error-card"><div class="error-icon">✅</div><div class="error-body"><div class="error-msg">Parabéns! Seu perfil está bem estruturado.</div></div></div>`;
-
-  const improveHTML=improvList.map(item=>`<div class="improve-item"><div class="improve-dot">${chk()}</div><span>${item}</span></div>`).join('');
-
-  // Prova social (Melhoria 3)
   const proofsHTML=PROOFS.map(p=>`
     <div class="proof-card">
       <div class="proof-stars">★★★★★</div>
@@ -755,7 +798,6 @@ function buildResult(){
       <div class="proof-author">${p.author}</div>
     </div>`).join('');
 
-  // Countdown HTML (Melhoria 7)
   const cd=getCountdown();
   const countdownHTML=cd?`
     <div class="countdown-wrap">
@@ -769,35 +811,47 @@ function buildResult(){
       </div>
     </div>`:'';
 
-  const FEATS=['2 aulas ao vivo + 6h de conteúdo prático','Plano de marketing personalizado para o seu nicho','Como usar IA para criar posts em minutos','Posicionamento de autoridade no Instagram','Ações de venda que geram conversão real','Hotseat ao vivo com Suellen pós-imersão'];
+  const FEATS=[
+    '2 aulas ao vivo + 6h de conteúdo prático',
+    'Plano de marketing personalizado para o seu nicho',
+    'Como usar IA para criar posts em minutos',
+    'Posicionamento de autoridade no Instagram',
+    'Ações de venda que geram conversão real',
+    'Hotseat ao vivo com Suellen pós-imersão',
+  ];
 
   document.getElementById('result-body').innerHTML=`
     <!-- GAUGE -->
     <div class="gauge-card">
-      <div class="gauge-label">Saúde do seu Instagram</div>
-      <div class="gauge-score" id="gscore" style="color:${levelColor}">0</div>
-      <div class="gauge-sub">de 100 pontos</div>
+      <div class="gauge-label">🧠 Seu nível estratégico</div>
+      <div class="gauge-score" id="gscore" style="color:${levelColor}">0.0</div>
+      <div class="gauge-sub">de 10 pontos</div>
       <div class="gauge-bar-wrap"><div class="gauge-bar" id="gbar" style="background:${levelColor}"></div></div>
-      <div class="gauge-level" style="color:${levelColor}">${level}</div>
+      <div class="gauge-level" style="color:${levelColor}">${levelIcon} ${level}</div>
     </div>
 
     <h2 style="font-family:'Montserrat',sans-serif;font-size:clamp(19px,5vw,24px);font-weight:900;line-height:1.25;margin-bottom:20px;">${scoreHead}</h2>
 
-    ${errors.length?`
     <div class="section-title">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-      ${errors.length} erro${errors.length>1?'s':''} identificado${errors.length>1?'s':''} no seu perfil
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      Diagnóstico
     </div>
-    <div class="error-list">${errorsHTML}</div>`:errorsHTML}
+    <div class="diag-card">${diagnosis}</div>
 
-    ${improvList.length?`
-    <div class="section-title" style="margin-top:4px;">
+    <div class="section-title">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2" stroke-linecap="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-      O que você precisa melhorar agora
+      O que fazer agora
     </div>
-    <div class="improve-card">${improveHTML}</div>`:''}
+    <div class="improve-card">${actionsHTML}</div>
 
-    <!-- PROVA SOCIAL (Melhoria 3) -->
+    <!-- FECHAMENTO -->
+    <div class="closing-box">
+      <p>👉 <strong style="color:var(--white)">Independente do seu nível, existe dinheiro na mesa hoje que você ainda não está capturando.</strong></p>
+      <p>👉 Identifique onde você pode usar inteligência artificial no seu dia a dia para otimizar seu tempo e ser mais estratégico.</p>
+      <p>E pra te ajudar nisso, teremos uma <strong style="color:var(--orange)">Imersão Marketing com IA</strong> em breve.</p>
+    </div>
+
+    <!-- PROVA SOCIAL -->
     <div class="proof-section">
       <div class="proof-title">O que dizem quem já participou</div>
       <div class="proof-cards">${proofsHTML}</div>
@@ -805,7 +859,7 @@ function buildResult(){
 
     <div class="divider">Tudo isso tem solução em 2 noites</div>
 
-    <!-- SOLUÇÃO DIRETA -->
+    <!-- SOLUÇÃO -->
     <div class="sol-card">
       <div class="sol-tag">
         <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4.5 13.5H12L11 22L19.5 10.5H12L13 2Z"/></svg>
@@ -847,30 +901,33 @@ function buildResult(){
   document.getElementById('pgwrap').style.opacity='0';
 
   setTimeout(()=>{
-    animateScore(pct);
-    document.getElementById('gbar').style.width=pct+'%';
+    animateScore(nota);
+    document.getElementById('gbar').style.width=barPct+'%';
     startCountdownInterval();
   },300);
 }
 
 function animateScore(target){
-  let cur=0;const el=document.getElementById('gscore');if(!el)return;
-  const step=Math.ceil(target/40);
-  const t=setInterval(()=>{cur=Math.min(cur+step,target);el.textContent=cur;if(cur>=target)clearInterval(t);},30);
+  let cur=0;
+  const el=document.getElementById('gscore');
+  if(!el)return;
+  const step=target/40;
+  const t=setInterval(()=>{
+    cur=Math.min(cur+step,target);
+    el.textContent=cur.toFixed(1);
+    if(cur>=target)clearInterval(t);
+  },30);
 }
 
 /* ── Restart ──────────────────────────────────── */
 function restart(){
   Object.keys(scores).forEach(k=>delete scores[k]);
-  nicho='';
   document.querySelectorAll('.opt').forEach(o=>o.classList.remove('sel'));
   for(let i=1;i<=TOTAL_Q;i++){
     const btn=document.getElementById('btn-'+i);
     if(btn)btn.classList.add('disabled');
     buildDots(i);
   }
-  const bn=document.getElementById('btn-nicho');
-  if(bn)bn.classList.add('disabled');
   ['ls1','ls2','ls3','ls4'].forEach(id=>{
     const el=document.getElementById(id);
     if(el){el.classList.remove('done');el.querySelector('.lstep-ic').textContent=id.replace('ls','');}
