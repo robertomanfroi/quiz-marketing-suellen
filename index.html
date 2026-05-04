@@ -624,7 +624,7 @@
 const LINK='https://lp.suellenwarmling.com.br/apareca-e-venda-v5?xcod=%7B%22vid%22%3A%22%7B%7Bad.id%7D%22%2C%22vsrc%22%3A%22diagnostico%22%2C%22u%22%3A%22756fddd0-a167-452b-b2ee-56000ab654f1%22%2C%22url%22%3A%22lp.suellenwarmling.com.br%2Fapareca-e-venda-v5%22%2C%22r%22%3A%22%22%2C%22v%22%3A1%7D';
 const AV='https://lp.suellenwarmling.com.br/wp-content/uploads/2024/09/suellen-foto-1.jpg';
 const TOTAL_Q=13;
-const MAX_PTS=60;
+const MAX_PTS=65;
 const scores={};
 
 // Event date: May 25, 2026 19:30 BRT (UTC-3)
@@ -735,8 +735,7 @@ function buildResult(){
   const total=Object.values(scores).reduce((s,v)=>s+v.pts,0);
   const rawNota=(total/MAX_PTS)*10;
   const nota=Math.min(rawNota,8.9);
-  const notaDisplay=nota.toFixed(1);
-  const barPct=Math.round((total/MAX_PTS)*100);
+  const barPct=Math.min(Math.round((total/MAX_PTS)*100),100);
 
   let level,levelColor,levelIcon,diagnosis,actions,ctaText,scoreHead;
 
@@ -893,7 +892,7 @@ function buildResult(){
 
     <div class="social-strip">
       <img src="${AV}" alt="Suellen Warmling" onerror="this.style.display='none'"/>
-      <div class="social-text"><strong>Suellen Warmling</strong>35+ mil alunas · 40 países · Palestrante Sebrae · Autora</div>
+      <div class="social-text"><strong>Suellen Warmling</strong> · 35+ mil alunas · 40 países · Palestrante Sebrae · Autora</div>
     </div>
   `;
 
